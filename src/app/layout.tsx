@@ -5,17 +5,14 @@ import { GeistMono } from "geist/font/mono";
 import { CommandMenu } from "../components/navigation/command";
 import { Toaster } from "../ui/sonner";
 // import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
-import { ThemeProvider } from "~/components/navigation/theme-provider";
-import { ThemeToggle } from "~/components/navigation/theme-toggle";
-import { FramerOverlay } from "~/components/navigation/framer-overlay";
-import { NavigationBar } from "~/components/navigation/navigation-bar";
+import { ThemeProvider } from "../components/navigation/theme-provider";
+import { ThemeToggle } from "../components/navigation/theme-toggle";
+import { FramerOverlay } from "../components/navigation/framer-overlay";
+import { NavigationBar } from "../components/navigation/navigation-bar";
 
 const geist = GeistMono;
 
-export const metadata: Metadata = {
-    title: "dromzeh.dev",
-    metadataBase: new URL("https://dromzeh.dev"),
-};
+
 
 interface RootLayoutProps {
     children: React.ReactNode;
@@ -25,11 +22,11 @@ export default function RootLayout({
     children,
 }: RootLayoutProps): React.ReactElement {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body
                 className={`${geist.className} h-full scroll-smooth antialiased pl-[calc(100vw-100%)]`}
             >
-                <ThemeProvider attribute="class" defaultTheme="dark">
+                <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
                     <NavigationBar />
                     <div>
                         <FramerOverlay>{children}</FramerOverlay>

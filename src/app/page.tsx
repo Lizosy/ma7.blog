@@ -3,6 +3,7 @@ import Image from "next/image";
 
 // Update the import path below to the correct relative path if 'about.tsx' is in 'src/components/main/about.tsx'
 import { About } from "@/main/about"
+import { ContactContainer } from "../main/contact";
 
 
 
@@ -13,6 +14,7 @@ export default function Home() {
             <div className="py-24 px-6 text-sm">
                 <section className="flex flex-col space-y-8">
                    <About/>
+                    <ContactContainer/>
                    
                 </section>
             </div>

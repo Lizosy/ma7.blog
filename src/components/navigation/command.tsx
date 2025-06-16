@@ -79,7 +79,6 @@ export function CommandMenu() {
                         
                             <Github size={16} />
                             <span className="ml-2">View Source</span>
-                        </CommandItem>
                     </CommandGroup>
                     <CommandSeparator />
                     <CommandGroup heading="Actions">
@@ -106,31 +105,33 @@ export function CommandMenu() {
                     </CommandGroup>
                 </CommandList>
                 <CommandSeparator />
-                {/* TODO(dromzeh): alignments :3 */}
-                <div className="text-muted-foreground flex gap-4 text-sm p-3 justify-end">
-                    <div className="flex flex-row gap-1 items-center">
-                        <ArrowUpDown
-                            size={20}
-                            color="white"
-                            className="bg-neutral-800 p-1 rounded-sm border-neutral-700"
-                        />
-                        Navigate
-                    </div>
-                    <div className="flex flex-row gap-1 items-center">
-                        <CornerDownLeft
-                            size={20}
-                            color="white"
-                            className="bg-neutral-800 p-1 rounded-sm border-neutral-700"
-                        />
-                        Select
-                    </div>
-                    <div className="flex flex-row gap-1 items-center">
-                        <CloseIcon
-                            size={20}
-                            color="white"
-                            className="bg-neutral-800 p-1 rounded-sm border-neutral-700"
-                        />
-                        Close
+                
+f                <div className="max-w-md flex items-center border rounded-full bg-background shadow-lg">
+                    <div className="text-muted-foreground flex gap-4 text-sm p-3 justify-end">
+                        <div className="flex flex-row gap-1 items-center">
+                            <ArrowUpDown
+                                size={20}
+                                color="white"
+                                className="bg-neutral-800 p-1 rounded-sm border-neutral-700"
+                            />
+                            Navigate
+                        </div>
+                        <div className="flex flex-row gap-1 items-center">
+                            <CornerDownLeft
+                                size={20}
+                                color="white"
+                                className="bg-neutral-800 p-1 rounded-sm border-neutral-700"
+                            />
+                            Select
+                        </div>
+                        <div className="flex flex-row gap-1 items-center">
+                            <CloseIcon
+                                size={20}
+                                color="white"
+                                className="bg-neutral-800 p-1 rounded-sm border-neutral-700"
+                            />
+                            Close
+                        </div>
                     </div>
                 </div>
             </CommandDialog>
