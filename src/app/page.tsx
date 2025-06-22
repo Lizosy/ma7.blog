@@ -13,8 +13,9 @@ export default function Home() {
         <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center">
             <div className="py-24 px-6 text-sm">
                 <section className="flex flex-col space-y-8">
-                   <About/>
                     <ContactContainer/>
+                     <About/>
+                   
                    
                 </section>
             </div>

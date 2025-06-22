@@ -1,6 +1,6 @@
 "use client";
 
-
+import { Dock, DockIcon } from "../ui/Dock";
 import {
     AnimatePresence,
     motion,
@@ -51,181 +51,26 @@ function SocialsContent() {
     };
 
     return (
-        <div className="group flex items-center gap-4 text-primary">
-            <Link
-                href="https://x.com/"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("x")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "x" && (
-                        <motion.div
-                            variants={icon}
-                            custom={{ rotateRight: true }}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 rotate-3 rounded-lg bg-black p-2 shadow-mixed"
-                        >
-                            <Image
-                                src="/socials/x.png"
-                                width={32}
-                                height={32}
-                                alt="x"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>x</span>
-            </Link>
-            <Link
-                href="https://github.com/"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("github")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "github" && (
-                        <motion.div
-                            variants={icon}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 -rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
-                        >
-                            <Image
-                                src="/socials/github.png"
-                                width={32}
-                                height={32}
-                                alt="github"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>github</span>
-            </Link>
-            <Link
-                href="https://discord.com/users/492731761680187403"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("discord")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "discord" && (
-                        <motion.div
-                            variants={icon}
-                            custom={{ rotateRight: true }}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
-                        >
-                            <Image
-                                src="/socials/discord.png"
-                                width={32}
-                                height={32}
-                                alt="discord"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>discord</span>
-            </Link>
-            <Link
-                href="https://tiktok.com/"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("tiktok")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "tiktok" && (
-                        <motion.div
-                            variants={icon}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 -rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
-                        >
-                            <Image
-                                src="/socials/tiktok.png"
-                                width={32}
-                                height={32}
-                                alt="tiktok"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>tiktok</span>
-            </Link>
-            <Link
-                href="mailto:"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("email")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "email" && (
-                        <motion.div
-                            variants={icon}
-                            custom={{ rotateRight: true }}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
-                        >
-                            <Image
-                                src="/socials/protonmail.png"
-                                width={32}
-                                height={32}
-                                alt="email"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>email</span>
-            </Link>
-            <Link
-                href="https://cal.com/"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("calcom")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "calcom" && (
-                        <motion.div
-                            variants={icon}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 -rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
-                        >
-                            <Image
-                                src="/socials/calcom.png"
-                                width={32}
-                                height={32}
-                                alt="cal"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>cal</span>
-            </Link>
+        <div className="relative">
+            <Dock iconMagnification={60} iconDistance={100} className="border-none outline-none">
+                <DockIcon>
+                    <span className="text-lg font-medium">GitHub</span>
+                </DockIcon>
+                <DockIcon>
+                    <span className="text-lg font-medium">Drive</span>
+                </DockIcon>
+                <DockIcon>
+                    <span className="text-lg font-medium">Notion</span>
+                </DockIcon>
+                <DockIcon>
+                    <span className="text-lg font-medium">WhatsApp</span>
+                </DockIcon>
+            </Dock>
         </div>
     );
 }
+
+
 
 export function ContactContainer() {
     const [status, setStatus] = React.useState("idle");
@@ -239,7 +84,6 @@ export function ContactContainer() {
         window.addEventListener("keydown", handleEscape);
         return () => window.removeEventListener("keydown", handleEscape);
     }, [setStatus]);
-
     return (
         <Context.Provider value={{ status, setStatus }}>
             <MotionConfig transition={transition}>

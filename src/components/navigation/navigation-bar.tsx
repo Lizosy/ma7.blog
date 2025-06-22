@@ -1,10 +1,10 @@
 "use client";
 
-// sticky navbar
-
 import { ThemeToggle } from "./theme-toggle";
 import { CommandMenu } from "./command";
 import { HomeButton } from "./home-button";
+
+export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export function NavigationBar() {
     return (

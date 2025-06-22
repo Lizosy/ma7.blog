@@ -28,7 +28,7 @@ export default function RootLayout({
             >
                 <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
                     <NavigationBar />
-                    <div>
+                    <div >
                         <FramerOverlay>{children}</FramerOverlay>
                     </div>
                     <Toaster />
@@ -37,7 +37,7 @@ export default function RootLayout({
                         aria-hidden
                     />
                     <div
-                        className="fixed bottom-[-10px] z-40 h-10 w-screen bg-background opacity-70 blur backdrop-blur-lg"
+                        className="fixed bottom-[-10px] z-40 h- w-screen bg-background opacity-70 blur backdrop-blur-lg"
                         aria-hidden
                     />
                 </ThemeProvider>
