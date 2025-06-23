@@ -31,7 +31,7 @@ function SocialsContent() {
         hidden: {
             opacity: 0,
             y: 15,
-            x: "-50%",
+            x: "-1%",
             filter: "blur(3px)",
             rotate: "0deg",
         },
@@ -51,21 +51,22 @@ function SocialsContent() {
     };
 
     return (
-        <div className="relative">
-            <Dock iconMagnification={60} iconDistance={100} className="border-none outline-none">
+        <div className="relative flex h-full">
+            <div className="absolute left-0 top-0 h-full flex items-center">
+            <Dock 
+                iconMagnification={60} 
+                iconDistance={100} 
+                
+                className="border-none outline-none mb-5"
+            >
                 <DockIcon>
-                    <span className="text-lg font-medium">GitHub</span>
+                <span className="text-sm font-medium">GitHub</span>
                 </DockIcon>
                 <DockIcon>
-                    <span className="text-lg font-medium">Drive</span>
-                </DockIcon>
-                <DockIcon>
-                    <span className="text-lg font-medium">Notion</span>
-                </DockIcon>
-                <DockIcon>
-                    <span className="text-lg font-medium">WhatsApp</span>
+                <span className="text-sm font-medium">mail</span>
                 </DockIcon>
             </Dock>
+            </div>
         </div>
     );
 }

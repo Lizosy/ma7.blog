@@ -16,18 +16,18 @@ import { cn } from "@/lib/utils";
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
   iconSize?: number;
-  iconMagnification?: number;
+  iconMagnification?: number; // not used but still kept for flexibility
   iconDistance?: number;
   direction?: "top" | "middle" | "bottom";
   children: React.ReactNode;
 }
 
-const DEFAULT_SIZE = 40;
-const DEFAULT_MAGNIFICATION = 60;
+const DEFAULT_SIZE = 50;
+const DEFAULT_MAGNIFICATION = 10;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border p-2 backdrop-blur-md",
+  "supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border backdrop-blur-md",
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -96,7 +96,7 @@ export interface DockIconProps
 
 const DockIcon = ({
   size = DEFAULT_SIZE,
-  magnification = DEFAULT_MAGNIFICATION,
+  magnification = DEFAULT_MAGNIFICATION, // still passed for extensibility
   distance = DEFAULT_DISTANCE,
   mouseX,
   className,
@@ -112,13 +112,13 @@ const DockIcon = ({
     return val - bounds.x - bounds.width / 2;
   });
 
-  const sizeTransform = useTransform(
+  const translateY = useTransform(
     distanceCalc,
     [-distance, 0, distance],
-    [size, magnification, size],
+    [0, -20, 0] // move up in the center, no movement at edges
   );
 
-  const scaleSize = useSpring(sizeTransform, {
+  const springY = useSpring(translateY, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
@@ -127,7 +127,12 @@ const DockIcon = ({
   return (
     <motion.div
       ref={ref}
-      style={{ width: scaleSize, height: scaleSize, padding }}
+      style={{
+        width: size,
+        height: size,
+        padding,
+        translateY: springY,
+      }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
         className,
