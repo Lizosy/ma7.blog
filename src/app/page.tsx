@@ -11,12 +11,10 @@ import { ContactContainer } from "../main/contact";
 export default function Home() {
     return (
         <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center">
-            <div className="py-24 px-6 text-sm">
-                <section className="flex flex-col space-y-8">
+            <div className="py-24 px-1 text-sm">
+                <section className="flex-1 flex-col space-y-10 w-full max-w-4xl mx-auto">
                     <ContactContainer/>
-                     <About/>
-                   
-                   
+                    <About/>
                 </section>
             </div>
         </div>
