@@ -40,13 +40,7 @@ const socialLinks = [
         color: "hover:text-blue-400",
         bgGlow: "hover:shadow-blue-400/20",
     },
-    {
-        name: "Twitter",
-        icon: Twitter,
-        url: "https://twitter.com/yourusername",
-        color: "hover:text-cyan-400",
-        bgGlow: "hover:shadow-cyan-400/20",
-    },
+
     {
         name: "LinkedIn",
         icon: Linkedin,
@@ -99,9 +93,9 @@ function SocialsContent() {
             initial="hidden"
             animate="show"
         >
-            <div className="flex items-center justify-center w-full">
+            <div className="flex items-start justify-start w-full mt-10">
                 <motion.div
-                    className="flex flex-wrap gap-4 p-6 backdrop-blur-sm bg-background/20 rounded-2xl border border-border/50"
+                    className="flex flex-wrap gap-4"
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", bounce: 0.2, duration: 0.3 }}
                 >
