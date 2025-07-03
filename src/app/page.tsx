@@ -5,6 +5,7 @@ import Image from "next/image";
 import { About } from "@/main/about"
 import { ContactContainer } from "../main/contact";
 import { MorphingText } from "../components/magicui/morphing-text";
+import { PostContainer } from "@/components/post/post-container";
 
 
 
@@ -22,6 +23,7 @@ export default function Home() {
                     />
                     <ContactContainer/>
                     <About/>
+                    <PostContainer />
                 </section>
             </div>
             
