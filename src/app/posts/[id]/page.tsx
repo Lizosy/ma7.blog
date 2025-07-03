@@ -12,17 +12,21 @@ export async function generateStaticParams() {
     }));
 }
 
-type Props = {
-    params: { id: string };
-};
+type PageProps = {
+    params: Promise<{ id: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
-export async function generateMetadata(props: Props): Promise<Metadata> {
-    // Don't destructure params directly
-    const post = await getPost(props.params.id);
+export async function generateMetadata(
+    props: PageProps
+): Promise<Metadata> {
+    // Await params before accessing its properties
+    const params = await props.params;
+    const post = await getPost(params.id);
 
     if (!post) {
         return {
-            title: "Post Not Found •",
+            title: "Post Not Found • dromzeh.dev",
             description: "The requested post could not be found.",
         };
     }
@@ -33,9 +37,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     };
 }
 
-async function PostPage(props: Props) {
-    // Don't destructure params directly
-    const post = await getPost(props.params.id);
+export default async function PostPage(props: PageProps) {
+    // Await params before accessing its properties
+    const params = await props.params;
+    const post = await getPost(params.id);
 
     if (!post) return notFound();
 
@@ -88,5 +93,3 @@ async function PostPage(props: Props) {
         </div>
     );
 }
-
-export default PostPage;
