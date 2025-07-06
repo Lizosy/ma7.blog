@@ -28,6 +28,11 @@ export const getPosts = async () => {
                         return null;
                     }
 
+                    // Also check if required fields exist
+                    if (!data.date) {
+                        return null;
+                    }
+
                     return {
                         title: data.title,
                         slug: data.slug,
@@ -39,10 +44,11 @@ export const getPosts = async () => {
                 }),
         )
     )
-        .filter((post) => post !== null)
+        .filter((post): post is Post => post !== null)
         .sort((a, b) => {
-            const dateA = new Date(a!.date.split("-").reverse().join("-"));
-            const dateB = new Date(b!.date.split("-").reverse().join("-"));
+            // No need for null checks anymore since we filter out posts without dates
+            const dateA = new Date(a.date.split("-").reverse().join("-"));
+            const dateB = new Date(b.date.split("-").reverse().join("-"));
             return dateB.getTime() - dateA.getTime();
         });
 

@@ -29,14 +29,14 @@ const socialLinks = [
     {
         name: "GitHub",
         icon: Github,
-        url: "https://github.com/yourusername",
+        url: "https://github.com/Lizosy",
         color: "hover:text-purple-400",
         bgGlow: "hover:shadow-purple-400/20",
     },
     {
         name: "Email",
         icon: Mail,
-        url: "mailto:your@email.com",
+        url: "mailto:ma7be0@gmail.com",
         color: "hover:text-blue-400",
         bgGlow: "hover:shadow-blue-400/20",
     },
@@ -44,7 +44,7 @@ const socialLinks = [
     {
         name: "LinkedIn",
         icon: Linkedin,
-        url: "https://linkedin.com/in/yourusername",
+        url: "https://linkedin.com/in/",
         color: "hover:text-green-400",
         bgGlow: "hover:shadow-green-400/20",
     },

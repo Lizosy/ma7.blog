@@ -11,8 +11,8 @@ import { PostContainer } from "@/components/post/post-container";
 
 export default function Home() {
     return (
-        <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center relative">
-            <div className="py-24 px-1 text-sm">
+        <div className="min-h-screen max-w-2xl mx-auto flex items-center justify-center relative">
+            <div className="py-32 px-1 text-sm">
                 <section className="flex-1 flex-col space-y-10 w-full max-w-4xl mx-auto">
                     <MorphingText
                         texts={[
