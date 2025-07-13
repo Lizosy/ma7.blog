@@ -26,7 +26,7 @@ export async function generateMetadata(
 
     if (!post) {
         return {
-            title: "Post Not Found • dromzeh.dev",
+            title: "Post Not Found ",
             description: "The requested post could not be found.",
         };
     }

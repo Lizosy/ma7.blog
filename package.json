@@ -46,5 +46,9 @@
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.4",
     "typescript": "^5"
-  }
+  },
+  "description": "*This README will be updated later.*",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
