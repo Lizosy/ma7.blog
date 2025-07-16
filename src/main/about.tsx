@@ -17,8 +17,8 @@ export function About() {
                 <h2 className="text-muted-foreground/60  ">About Me</h2>
                 <div className="space-y-2 text-muted-foreground">
                     <p>
-                        Ehh,What's up, Doc? I'm Ma7be0 coding somestuff or write doc (maybe) , grind  some config i little bit sure that i 
-                        are interface obseessed, interested distro that look cool :) 
+                        Ehh,What's up, Doc? I'm Ma7be0 coding somestuff or write doc (maybe) , grind  some config ,
+                         interface obseessed, interested distro that look cool :) 
                         
                      
                     </p>
